@@ -1,0 +1,36 @@
+name:                oophaskell
+version:             0.1.0.0
+license:             NCSA
+author:              "Jingtian Yao"
+maintainer:          "yao28@illinois.edu"
+copyright:           "2021 Jingtian Yao"
+
+extra-source-files:
+- README.md
+
+
+description:         Please see the README 
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+tests:
+  oophaskell-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - oophaskell
+    - test-framework
+    - tasty
+    - tasty-hunit
+    - tasty-quickcheck
+    - tasty-dejafu
+    - random
+    - concurrency
